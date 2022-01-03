@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { parse } from "query-string";
 import { HeroCard } from "../hero/HeroCard";
@@ -15,6 +15,15 @@ export const SearchPage = () => {
   const [{ term }, handleInputChange] = useForm({
     term: q,
   });
+
+  useEffect(() => {
+    if (term) {
+      const heroesFiltered = getHeroesByName(term);
+
+      setHeroes(heroesFiltered);
+    }
+  }, [term]);
+
   const handleSearch = (e) => {
     e.preventDefault();
     navigate(`?q=${term}`);
