@@ -1,0 +1,30 @@
+$primary: #f27a54;
+$secondary: #a154f2;
+$success: #6fcf97;
+$gray0: #30363d;
+$gray1: #3c444c;
+$dark: $gray1;
+
+/* === CARDS === */
+$card-bg: $gray1;
+$card-color: white;
+$card-border-radius: 6px;
+$card-height: 344px;
+$card-box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
+
+/* === NAV === */
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "./components/avatar";
+@import "./components/card";
+
+body {
+  background-color: $gray0;
+}
+
+hr {
+  border-color: white;
+  background-color: white;
+  color: white;
+}
